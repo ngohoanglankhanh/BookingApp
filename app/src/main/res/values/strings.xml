@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AppointmentBooking</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_customer">Customer</string>
+    <string name="title_service">Service</string>
+    <string name="add_new_customer">Add new customer</string>
+    <string name="delete">delete</string>
+    <string name="Name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="note">Note</string>
+    <string name="empty_message_error">This field cannot be empty</string>
+    <string name="price">Price</string>
+    <string name="completed">Completed</string>
+    <string name="duration">Duration</string>
+    <string name="time_start">Time: %d:%d</string>
+    <string name="date">Date</string>
+    <string name="date_format">Date: %d/%d/%d</string>
+    <string name="show_calendar">Show Calendar</string>
+    <string name="hide_calendar">Hide Calendar</string>
+    <string name="add_time">Add Time</string>
+    <string name="name_s">Name: %s</string>
+    <string name="phone_s">Phone: %s</string>
+    <string name="email_s">Email: %s</string>
+
+    <string-array name="serviceArray">
+        <item>Woman Hair Cut</item>
+        <item>Man Hair Cut</item>
+        <item>Woman Hair Dye</item>
+        <item>Man Hair Dye</item>
+    </string-array>
+</resources>

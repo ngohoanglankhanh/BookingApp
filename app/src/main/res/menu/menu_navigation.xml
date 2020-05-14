@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_calendar_black_24dp"
+        android:title="@string/title_calendar"
+        tools:ignore="PrivateResource" />
+
+    <item
+        android:id="@+id/navigation_customer"
+        android:icon="@drawable/ic_customer_black_24dp"
+        android:title="@string/title_customer" />
+
+</menu>

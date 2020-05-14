@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#13C5B4">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_customer"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/etCustomerName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/Name"
+            android:inputType="text"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/etCustomerPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:textSize="16sp"
+            tools:ignore="TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/etCustomerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/etCustomerNote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/note"
+            android:inputType="text"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
