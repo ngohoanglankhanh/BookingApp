@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.appoinment_dialog.view.*
 import kotlinx.android.synthetic.main.appointment_row.view.*
@@ -84,11 +85,17 @@ class AppointmentDialog : DialogFragment() {
 
         positiveButton.setOnClickListener {
             try {
-                if (!TextUtils.isEmpty(etPrice.text)) {
+                // case: there's no customer yet
+                if (names.size < 1 || names.contains("")) {
+                    val view: TextView = spinnerCustomerName.selectedView as TextView
+                    view.error = getString(R.string.empty_message_error)
+                    view.setTextColor(ContextCompat.getColor(context as MainActivity, R.color.colorRed))
+                    view.text = getString(R.string.empty_customer)
+                } else if (TextUtils.isEmpty(etPrice.text)) { // case: price field is missing
+                    etPrice.error = getString(R.string.empty_message_error)
+                } else { // everything OK
                     handleAddNewAppointment()
                     dialog!!.dismiss()
-                } else {
-                    etPrice.error = getString(R.string.empty_message_error)
                 }
             } catch (e : Exception) {
                 etPrice.error = e.message
@@ -125,6 +132,7 @@ class AppointmentDialog : DialogFragment() {
             names.sort()
 
             (context!! as MainActivity).runOnUiThread {
+                if (names.size == 0) names.add("")
                 val customerCategoryAdapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, names)
                 customerCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spinnerCustomerName.adapter = customerCategoryAdapter
@@ -174,8 +182,10 @@ class AppointmentDialog : DialogFragment() {
         )
     }
 
-    private val timePickerListener = TimePickerDialog.OnTimeSetListener{ timePicker: TimePicker, hourOfDay: Int, minute: Int ->
-        tvTimeStart.text = getString(R.string.time_start, hourOfDay, minute)
+    private val timePickerListener = TimePickerDialog.OnTimeSetListener{ timePicker: TimePicker, hourOfDay: Int, minuteOfHour: Int ->
+        val hour = if (hourOfDay < 10) "0$hourOfDay" else hourOfDay.toString()
+        val minute = if (minuteOfHour < 10) "0$minuteOfHour" else minuteOfHour.toString()
+        tvTimeStart.text = getString(R.string.time_start, hour, minute)
     }
 
 }

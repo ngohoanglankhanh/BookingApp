@@ -46,7 +46,7 @@ class FragmentCalendar : Fragment() {
             if (!showCalendar) {
                 rootView.calendarView.visibility = View.GONE
                 showCalendar = true
-                rootView.btnCalendar.text = getString(R.string.show_calendar)
+                rootView.btnCalendar.text = getString(R.string.add_appointment)
             } else {
                 rootView.calendarView.visibility = View.VISIBLE
                 showCalendar = false
@@ -54,6 +54,8 @@ class FragmentCalendar : Fragment() {
 
             }
         }
+
+        activity!!.title = "Calendar"
 
         return rootView
     }

@@ -41,8 +41,7 @@
             android:id="@+id/btnAddTime"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/add_time"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            android:text="@string/add_time" />
     </LinearLayout>
 
     <TextView

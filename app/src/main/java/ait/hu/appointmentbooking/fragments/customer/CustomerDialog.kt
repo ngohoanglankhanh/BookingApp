@@ -71,8 +71,12 @@ class CustomerDialog : DialogFragment() {
                     && !TextUtils.isEmpty(etCustomerPhoneNumber.text)
                     && !TextUtils.isEmpty(etCustomerEmail.text)) {
 
-                    handleAddNewCustomer()
-                    dialog!!.dismiss()
+                    if (isValidEmailAddress(etCustomerEmail.text.toString())) {
+                        handleAddNewCustomer()
+                        dialog!!.dismiss()
+                    }else {
+                        etCustomerEmail.error = getString(R.string.error_invalid_email)
+                    }
 
                 } else {
                     showEmptyTextInputError()
@@ -117,5 +121,9 @@ class CustomerDialog : DialogFragment() {
                 etCustomerEmail.error = getString(R.string.empty_message_error)
             }
         }
+    }
+
+    private fun isValidEmailAddress(text: String) : Boolean{
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
     }
 }

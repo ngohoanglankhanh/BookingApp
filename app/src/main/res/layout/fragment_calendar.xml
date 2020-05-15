@@ -12,7 +12,7 @@
         android:id="@+id/btnCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_calendar"/>
+        android:text="@string/add_appointment"/>
 
     <CalendarView
         android:id="@+id/calendarView"

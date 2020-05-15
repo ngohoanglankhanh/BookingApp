@@ -44,10 +44,10 @@ class AppointmentRVAdapter : RecyclerView.Adapter<AppointmentRVAdapter.ViewHolde
 
         holder.tvCustomerName.text = currentAppointment.customerName
         holder.tvService.text = currentAppointment.service
-        holder.tvPrice.text = currentAppointment.price
+        holder.tvPrice.text = (context as MainActivity).resources.getString(R.string.price_with_value, currentAppointment.price)
         holder.cbCompleted.isChecked = currentAppointment.completed
-        holder.tvDate.text = currentAppointment.date
-        holder.tvTimeStart.text = currentAppointment.timeStart
+        holder.tvDate.text = currentAppointment.date.split("Date: ")[1].trim()
+        holder.tvTimeStart.text = currentAppointment.timeStart.split("Time: ")[1].trim()
 
         holder.btnDelete.setOnClickListener {
             deleteAppointment(holder.adapterPosition)

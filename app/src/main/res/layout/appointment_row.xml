@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    card_view:cardBackgroundColor="#ECC6D3"
+    card_view:cardBackgroundColor="#C1C9F4"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp">
 
@@ -101,7 +101,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/delete"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:layout_marginBottom="10dp"
             card_view:layout_constraintBaseline_toBaselineOf="@+id/cbCompleted"
             card_view:layout_constraintEnd_toEndOf="@+id/tvDate"

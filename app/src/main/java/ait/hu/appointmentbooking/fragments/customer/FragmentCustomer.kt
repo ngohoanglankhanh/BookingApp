@@ -42,6 +42,8 @@ class FragmentCustomer : Fragment() {
             CustomerDialog().show(childFragmentManager, CustomerDialog.TAG)
         }
 
+        activity!!.title = "Customer"
+
         return rootView
     }
 
