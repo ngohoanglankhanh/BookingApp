@@ -11,5 +11,4 @@ Technologies:
 - KenBurnsView 
 - Intents
 
-Author: Khanh Ngo
-AIT Budapest Mobile Development 
+Author: Khanh Ngo, AIT Budapest Mobile Development 
